@@ -1,12 +1,12 @@
 import React from 'react';
-import CountriesData from '../countriesAll.json';
 
 
-function Flag(){
-    return (
+
+function Flag({fetchedData, filteredData}){
+    return  (
         <div className='cardContainer'>
              <div className="cardPoster">
-                    {CountriesData.map((element, index) => {
+                    {filteredData.map((element, index) => {
                         return (
                             <div>
                                 <img src={element.flag} alt="flag" className="card"></img>
@@ -17,11 +17,13 @@ function Flag(){
                             </div>
                         )
                     })}
-
-            
                  </div>
         </div>
-    )
-}
+    )  
+
+ }
+
+  
+
 
 export default Flag;

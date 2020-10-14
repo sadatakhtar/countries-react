@@ -1,24 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import CountriesData from '../countriesAll.json';
+import React from 'react';
 
+const SearchBox = ({
+    search, 
+    setSearch,
+    handleSearch
+}) => {
 
-const SearchBox = () => {
-    const [search, setSearch]= useState("");
-
-    
-
-
-    const handleSearch = (event) => {
-        let searchString = event.target.value;
-        console.log(searchString);
-      
-    }
     return (
         <div>
             <input 
             type="search" 
             placeholder="Search here..."
             onChange={handleSearch}
+            
+            
             />
 
         </div>

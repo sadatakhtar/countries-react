@@ -2,13 +2,14 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+ 
   
   
 }
-/* body{
+body{
   background-color: #111;
   color: antiquewhite;
-} */
+}
 .title_container{
   display: flex;
   justify-content: space-between;

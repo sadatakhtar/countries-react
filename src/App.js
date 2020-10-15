@@ -47,7 +47,7 @@ function App() {
 
 
   return loader && reload ? (
-    <div className={mode ?  " App btnDay" : " App btnNight"}>
+    <div className={mode ?  " App btnDay" : "btnNight App"}>
       <Title mode={mode} setMode={setMode}/>
       <SearchBox search={search} setSearch={setSearch} handleSearch={handleSearch}/>
       <Flag fetchedData={fetchedData} />

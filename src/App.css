@@ -3,11 +3,12 @@
   flex-direction: column;
   text-align: center;
   
+  
 }
-body{
+/* body{
   background-color: #111;
   color: antiquewhite;
-}
+} */
 .title_container{
   display: flex;
   justify-content: space-between;
@@ -24,10 +25,7 @@ body{
   
 }
 
-button{
-  height: 40px;
-  border-radius: 50px;
-}
+
 
 img{
   width: 250px;
@@ -67,4 +65,23 @@ input{
   text-align: center;
   font-size: 60px;
 }
+button{
+  height: 40px;
+  border-radius: 50px;
+  outline: none;
+}
 
+.btnDay{
+  
+  
+  background-color: antiquewhite;
+  color: #111;
+}
+
+.btnNight{
+
+  
+  
+  background-color: #111;
+  color: yellow;
+}

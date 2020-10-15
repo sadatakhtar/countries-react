@@ -11,6 +11,7 @@ function App() {
   const [loader, setLoader] = useState(false);
   const [search, setSearch]= useState("");
   const [reload, setReload] = useState(false);
+  const [mode, setMode] = useState(true);
   
   
 
@@ -46,8 +47,8 @@ function App() {
 
 
   return loader && reload ? (
-    <div className="App">
-      <Title />
+    <div className={mode ?  " App btnDay" : " App btnNight"}>
+      <Title mode={mode} setMode={setMode}/>
       <SearchBox search={search} setSearch={setSearch} handleSearch={handleSearch}/>
       <Flag fetchedData={fetchedData} />
      

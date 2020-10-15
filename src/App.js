@@ -35,14 +35,11 @@ function App() {
 
   const handleSearch = (event) => {
     let searchString = event.target.value;
-    setFilteredData(fetchedData.filter(({name, capital}) => {
+    setFetchedData(fetchedData.filter(({name, capital}) => {
       return (name.toLowerCase().includes(searchString) || capital.toLowerCase().includes(searchString));
-    }))
-}
+    }));
 
-
-if(error){
-
+   
 }
 
 

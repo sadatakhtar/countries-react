@@ -3,10 +3,13 @@ import React from 'react';
 
 
 function Flag({fetchedData, filteredData}){
+
+    
+
     return  (
         <div className='cardContainer'>
              <div className="cardPoster">
-                    {filteredData.map((element, index) => {
+                    {fetchedData.map((element, index) => {
                         return (
                             <div>
                                 <img src={element.flag} alt="flag" className="card"></img>

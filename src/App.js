@@ -9,9 +9,7 @@ import SearchBox from './components/SearchBox';
 function App() {
   const [fetchedData, setFetchedData] = useState([]);
   const [loader, setLoader] = useState(false);
-  const [error, setError] = useState(false);
   const [search, setSearch]= useState("");
-  const [filteredData, setFilteredData] = useState([]);
   const [reload, setReload] = useState(false);
   
   
@@ -23,7 +21,6 @@ function App() {
     })
     .then(data => {
       console.log(data);
-      setError(true);
       setLoader(true);
       setReload(true);
       setFetchedData(data);
@@ -52,7 +49,7 @@ function App() {
     <div className="App">
       <Title />
       <SearchBox search={search} setSearch={setSearch} handleSearch={handleSearch}/>
-      <Flag fetchedData={fetchedData} filteredData={filteredData}/>
+      <Flag fetchedData={fetchedData} />
      
     </div>
   ) : (

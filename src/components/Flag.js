@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-function Flag({fetchedData, filteredData}){
+function Flag({fetchedData}){
 
     
 

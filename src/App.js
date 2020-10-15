@@ -23,7 +23,6 @@ function App() {
     .then(data => {
       console.log(data);
       setLoader(true);
-      setReload(true);
       setFetchedData(data);
     })
     .catch(err => {
@@ -46,7 +45,7 @@ function App() {
 
 
 
-  return loader && reload ? (
+  return loader ? (
     <div className={mode ?  " App btnDay" : "btnNight App"}>
       <Title mode={mode} setMode={setMode}/>
       <SearchBox search={search} setSearch={setSearch} handleSearch={handleSearch}/>

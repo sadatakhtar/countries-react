@@ -12,6 +12,7 @@ function App() {
   const [error, setError] = useState(false);
   const [search, setSearch]= useState("");
   const [filteredData, setFilteredData] = useState([]);
+  const [reload, setReload] = useState(false);
   
   
 
@@ -24,6 +25,7 @@ function App() {
       console.log(data);
       setError(true);
       setLoader(true);
+      setReload(true);
       setFetchedData(data);
     })
     .catch(err => {
@@ -33,17 +35,20 @@ function App() {
 
   }, []);
 
+
+
   const handleSearch = (event) => {
     let searchString = event.target.value;
+    console.log(searchString);
     setFetchedData(fetchedData.filter(({name, capital}) => {
       return (name.toLowerCase().includes(searchString) || capital.toLowerCase().includes(searchString));
-    }));
-
+    })); 
    
 }
 
 
-  return loader ? (
+
+  return loader && reload ? (
     <div className="App">
       <Title />
       <SearchBox search={search} setSearch={setSearch} handleSearch={handleSearch}/>

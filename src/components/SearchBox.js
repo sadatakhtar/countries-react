@@ -1,8 +1,6 @@
 import React from 'react';
 
 const SearchBox = ({
-    search, 
-    setSearch,
     handleSearch,
     value
 }) => {

@@ -10,7 +10,6 @@ function App() {
   const [fetchedData, setFetchedData] = useState([]);
   const [loader, setLoader] = useState(false);
   const [search, setSearch]= useState("");
-  const [reload, setReload] = useState(false);
   const [mode, setMode] = useState(true);
   
   
@@ -32,23 +31,31 @@ function App() {
 
   }, []);
 
+  function refreshPage(){
+    window.location.reload();
+  }
+
 
 
   const handleSearch = (event) => {
     let searchString = event.target.value;
-    console.log(searchString);
-    setFetchedData(fetchedData.filter(({name, capital}) => {
-      return (name.toLowerCase().includes(searchString) || capital.toLowerCase().includes(searchString));
-    })); 
+
+    searchString.length < 1 ? refreshPage() : (
+      setFetchedData(fetchedData.filter(({name, capital}) => {
+        return (name.toLowerCase().includes(searchString) || 
+        capital.toLowerCase().includes(searchString));
+      })) 
+
+    )
+
+   
    
 }
-
-
 
   return loader ? (
     <div className={mode ?  " App btnDay" : "btnNight App"}>
       <Title mode={mode} setMode={setMode}/>
-      <SearchBox search={search} setSearch={setSearch} handleSearch={handleSearch}/>
+      <SearchBox value={search} setSearch={setSearch} handleSearch={handleSearch}/>
       <Flag fetchedData={fetchedData} />
      
     </div>

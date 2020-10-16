@@ -3,7 +3,8 @@ import React from 'react';
 const SearchBox = ({
     search, 
     setSearch,
-    handleSearch
+    handleSearch,
+    value
 }) => {
 
     return (
@@ -12,8 +13,6 @@ const SearchBox = ({
             type="search" 
             placeholder="Search here..."
             onChange={handleSearch}
-            
-            
             />
 
         </div>
